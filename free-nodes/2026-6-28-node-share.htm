@@ -235,29 +235,9 @@ IPLC、IEPL中转，点对点专线连接。高速冲浪，科学上网不二选
     </div>
 <h4>FAQ</h4>
 <div class="panel panel-default">
-    <div class="panel-heading"><h5>VMess AEAD 加密为何适合高封锁环境？</h5></div>
+    <div class="panel-heading"><h5>Sing-box 如何按 IP 段实现智能分流？</h5></div>
     <div class="panel-body">
-        AEAD 加密可防止数据篡改和流量特征泄露，降低被检测风险。在高封锁网络中，保证节点可用性和连接稳定性，同时提升数据传输安全性，确保长期安全访问。<hr />    </div>
-</div>
-<div class="panel panel-default">
-    <div class="panel-heading"><h5>Nekoray 的订阅更新支持自动导入节点吗？</h5></div>
-    <div class="panel-body">
-        支持。Nekoray 可以通过订阅 URL 自动下载节点，并根据用户配置更新本地节点列表。定期更新确保节点始终可用，减少手动维护的麻烦，提高使用便利性。<hr />    </div>
-</div>
-<div class="panel panel-default">
-    <div class="panel-heading"><h5>PassWall2 如何根据延迟自动切换节点？</h5></div>
-    <div class="panel-body">
-        PassWall2 会定期测试节点延迟，并结合策略组自动切换到延迟最低的节点。无需用户手动操作，即可保证网页、视频和游戏流量的高速稳定访问，提高整体网络体验。<hr />    </div>
-</div>
-<div class="panel panel-default">
-    <div class="panel-heading"><h5>Trojan-go 如何启用 WebSocket 支持？</h5></div>
-    <div class="panel-body">
-        在配置文件中将 transport 参数设置为 websocket，并指定 path 路径。客户端需同步使用相同路径及主机名。这样可将 Trojan 流量伪装为普通 WebSocket 通信以提升隐蔽性。<hr />    </div>
-</div>
-<div class="panel panel-default">
-    <div class="panel-heading"><h5>WinXray 支持 Hysteria 协议吗？</h5></div>
-    <div class="panel-body">
-        新版本的 WinXray 已整合了 V2Ray 内核更新，支持 Hysteria 协议。用户可通过导入 Clash 或 sing-box 类型的订阅使用基于 QUIC 的高性能连接，速度和稳定性均更出色。<hr />    </div>
+        Sing-box 支持根据 IP 段匹配流量，将国内流量直连、国外流量走代理。结合策略组和规则文件，实现精细化流量管理，保证访问速度和稳定性，同时提高节点使用效率。<hr />    </div>
 </div>
 <div class="panel panel-default">
     <div class="panel-heading"><h5>Mihomo 支持节点分类管理吗？</h5></div>
@@ -270,19 +250,39 @@ IPLC、IEPL中转，点对点专线连接。高速冲浪，科学上网不二选
         Clash 支持设置订阅规则的更新频率，例如每小时或每天。定期更新可保证节点和规则最新，减少手动维护，提高访问速度和分流效率，同时保持网络稳定性。<hr />    </div>
 </div>
 <div class="panel panel-default">
-    <div class="panel-heading"><h5>SSR 的混淆方式如何选择最合适？</h5></div>
-    <div class="panel-body">
-        根据网络环境选择适合的混淆方式，如 tls1.2_ticket_auth 模拟 HTTPS 流量，可隐藏真实特征。结合协议插件使用，可以提高抗封锁能力和节点可用性。<hr />    </div>
-</div>
-<div class="panel panel-default">
     <div class="panel-heading"><h5>Mihomo 的 Web Dashboard 有哪些功能？</h5></div>
     <div class="panel-body">
         Mihomo 的 Web 控制面板允许用户可视化管理节点、分流规则、日志查看与系统状态监控。可通过浏览器访问 Dashboard 地址进行远程管理，方便多设备统一控制。<hr />    </div>
 </div>
 <div class="panel panel-default">
-    <div class="panel-heading"><h5>Sing-box 如何按 IP 段实现智能分流？</h5></div>
+    <div class="panel-heading"><h5>Trojan-go 如何启用 WebSocket 支持？</h5></div>
     <div class="panel-body">
-        Sing-box 支持根据 IP 段匹配流量，将国内流量直连、国外流量走代理。结合策略组和规则文件，实现精细化流量管理，保证访问速度和稳定性，同时提高节点使用效率。    </div>
+        在配置文件中将 transport 参数设置为 websocket，并指定 path 路径。客户端需同步使用相同路径及主机名。这样可将 Trojan 流量伪装为普通 WebSocket 通信以提升隐蔽性。<hr />    </div>
+</div>
+<div class="panel panel-default">
+    <div class="panel-heading"><h5>Nekoray 的订阅更新支持自动导入节点吗？</h5></div>
+    <div class="panel-body">
+        支持。Nekoray 可以通过订阅 URL 自动下载节点，并根据用户配置更新本地节点列表。定期更新确保节点始终可用，减少手动维护的麻烦，提高使用便利性。<hr />    </div>
+</div>
+<div class="panel panel-default">
+    <div class="panel-heading"><h5>VMess AEAD 加密为何适合高封锁环境？</h5></div>
+    <div class="panel-body">
+        AEAD 加密可防止数据篡改和流量特征泄露，降低被检测风险。在高封锁网络中，保证节点可用性和连接稳定性，同时提升数据传输安全性，确保长期安全访问。<hr />    </div>
+</div>
+<div class="panel panel-default">
+    <div class="panel-heading"><h5>PassWall2 如何根据延迟自动切换节点？</h5></div>
+    <div class="panel-body">
+        PassWall2 会定期测试节点延迟，并结合策略组自动切换到延迟最低的节点。无需用户手动操作，即可保证网页、视频和游戏流量的高速稳定访问，提高整体网络体验。<hr />    </div>
+</div>
+<div class="panel panel-default">
+    <div class="panel-heading"><h5>SSR 的混淆方式如何选择最合适？</h5></div>
+    <div class="panel-body">
+        根据网络环境选择适合的混淆方式，如 tls1.2_ticket_auth 模拟 HTTPS 流量，可隐藏真实特征。结合协议插件使用，可以提高抗封锁能力和节点可用性。<hr />    </div>
+</div>
+<div class="panel panel-default">
+    <div class="panel-heading"><h5>WinXray 支持 Hysteria 协议吗？</h5></div>
+    <div class="panel-body">
+        新版本的 WinXray 已整合了 V2Ray 内核更新，支持 Hysteria 协议。用户可通过导入 Clash 或 sing-box 类型的订阅使用基于 QUIC 的高性能连接，速度和稳定性均更出色。    </div>
 </div>
 <div class="panel panel-default mt-5">
     <div class="panel-heading">
@@ -306,15 +306,13 @@ IPLC、IEPL中转，点对点专线连接。高速冲浪，科学上网不二选
     <div class="panel-body">
         <div class="row">
             <div class="text-center">
-                <a href="javascript:;" class="js_to" data-url="https://www.futizi.net/?code=" data-type="Luniuyun" data-code="svvkQf3y" target="_blank">
-                    <img src="/assets/website/img/G/luniuyun.webp" class="avatar" alt="绿牛云">
+                <a href="javascript:;" class="js_to" data-url="https://c.kilxs.cn/?path=" data-type="Xingchen" data-code="register&code" target="_blank">
+                    <img src="/assets/website/img/G/xingchen.webp" class="avatar" alt="星辰机场">
                 </a>
                 <dl>
-                    <dt><a href="javascript:;" class="js_to" data-url="https://www.futizi.net/?code=" data-type="Luniuyun" data-code="svvkQf3y" target="_blank">绿牛云</a></dt>
+                    <dt><a href="javascript:;" class="js_to" data-url="https://c.kilxs.cn/?path=" data-type="Xingchen" data-code="register&code" target="_blank">星辰机场</a></dt>
                     <dd>
-                        <p>高速稳定的网络加速</p>
-                        <p>畅享全球内容，访问 ChatGPT、TikTok、Google 等热门网站。
-全平台支持 · 7×24 专业客服 · 采用军工级安全加密传输技术。</p>                    </dd>
+                        <p>【包年送2个月】</p><p>1、购买入门版年付套餐额外送2个月，共14个月，只要99元！！！</p><p>2、购买“至尊天皇”年付套餐，额外送2个月，只要299元！！！</p><p>3、购买其他包月类套餐中的年付，同样送2个月！！！</p><p>错过要再等一年！！</p>                    </dd>
                 </dl>
             </div>
         </div>
@@ -326,16 +324,16 @@ IPLC、IEPL中转，点对点专线连接。高速冲浪，科学上网不二选
     </div>
     <div class="panel-body">
         <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
+                        <li class="py-2"><a href="/news/article-257147.htm" title="全面掌握Shadowrocket大陆白名单：高效代理与本地访问的完美平衡术">全面掌握Shadowrocket大陆白名单：高效代理与本地访问的完美平衡术</a><hr /></li>
+                        <li class="py-2"><a href="/news/article-250734.htm" title="如何完全卸载Clash：详细步骤和常见问题解答">如何完全卸载Clash：详细步骤和常见问题解答</a><hr /></li>
+                        <li class="py-2"><a href="/free-nodes/2026-7-2-free-clash.htm" title="Cheap Clash - 7月2日19.8M/S|免费SSR节点/Shadowrocket节点/V2ray节点/Trojan节点/Singbox节点/Clash节点节点推荐，Clash梯子购买推荐">Cheap Clash - 7月2日19.8M/S|免费SSR节点/Shadowrocket节点/V2ray节点/Trojan节点/Singbox节点/Clash节点节点推荐，Clash梯子购买推荐</a><hr /></li>
+                        <li class="py-2"><a href="/news/article-262556.htm" title="台湾用户必备：Shadowrocket安全上网全攻略与深度体验">台湾用户必备：Shadowrocket安全上网全攻略与深度体验</a><hr /></li>
+                        <li class="py-2"><a href="/news/article-255858.htm" title="苹果设备V2Ray完全指南：解锁网络自由与安全新体验">苹果设备V2Ray完全指南：解锁网络自由与安全新体验</a><hr /></li>
+                        <li class="py-2"><a href="/free-nodes/2026-6-27-node-share-links.htm" title="Cheap Clash - 6月27日21.1M/S|免费SSR节点/Shadowrocket节点/V2ray节点/Singbox节点/Trojan节点/Clash节点节点推荐，Clash梯子购买推荐">Cheap Clash - 6月27日21.1M/S|免费SSR节点/Shadowrocket节点/V2ray节点/Singbox节点/Trojan节点/Clash节点节点推荐，Clash梯子购买推荐</a><hr /></li>
+                        <li class="py-2"><a href="/news/article-259297.htm" title="Shadowrocket安装源全解析：解锁网络自由的关键钥匙">Shadowrocket安装源全解析：解锁网络自由的关键钥匙</a><hr /></li>
+                        <li class="py-2"><a href="/news/article-252429.htm" title="全面解析地震女巫clash：从入门到精通的终极攻略">全面解析地震女巫clash：从入门到精通的终极攻略</a><hr /></li>
                         <li class="py-2"><a href="/news/article-262120.htm" title="突破边界：科学上网与分布式网络技术的深度解析与未来展望">突破边界：科学上网与分布式网络技术的深度解析与未来展望</a><hr /></li>
-                        <li class="py-2"><a href="/news/article-253273.htm" title="水下角斗场：揭秘鱼类冲突背后的生存博弈与生态智慧">水下角斗场：揭秘鱼类冲突背后的生存博弈与生态智慧</a><hr /></li>
-                        <li class="py-2"><a href="/news/article-254569.htm" title="当网络被Clash"绑架"：彻底解决代理依赖症的终极指南">当网络被Clash"绑架"：彻底解决代理依赖症的终极指南</a><hr /></li>
-                        <li class="py-2"><a href="/news/article-259736.htm" title="Shadowsocks与V2Ray融合指南：打造更安全稳定的科学上网体验">Shadowsocks与V2Ray融合指南：打造更安全稳定的科学上网体验</a><hr /></li>
-                        <li class="py-2"><a href="/news/article-251158.htm" title="2024科学上网工具全面解析：解锁数字世界的安全密钥">2024科学上网工具全面解析：解锁数字世界的安全密钥</a><hr /></li>
-                        <li class="py-2"><a href="/news/article-250306.htm" title="V2Ray 免流 UDP 完全指南：从原理到实践的科学上网艺术">V2Ray 免流 UDP 完全指南：从原理到实践的科学上网艺术</a><hr /></li>
-                        <li class="py-2"><a href="/news/article-255436.htm" title="Clash安卓版下载全攻略：安全渠道与高效配置指南">Clash安卓版下载全攻略：安全渠道与高效配置指南</a><hr /></li>
-                        <li class="py-2"><a href="/news/article-246500.htm" title="掌握网络自由：Quantumult免费使用全攻略与深度解析">掌握网络自由：Quantumult免费使用全攻略与深度解析</a><hr /></li>
-                        <li class="py-2"><a href="/news/article-261687.htm" title="Clash鸿蒙版深度剖析：全面使用指南与实操攻略">Clash鸿蒙版深度剖析：全面使用指南与实操攻略</a><hr /></li>
-                        <li class="py-2"><a href="/news/article-249036.htm" title="从零开始：Shadowrocket安卓版全方位配置指南与深度体验">从零开始：Shadowrocket安卓版全方位配置指南与深度体验</a><hr /></li>
+                        <li class="py-2"><a href="/news/article-252000.htm" title="全面解析Clash V2浮雕款：从入门到精通的网络代理利器">全面解析Clash V2浮雕款：从入门到精通的网络代理利器</a><hr /></li>
                     </ul>
     </div>
 </div>
@@ -346,6 +344,9 @@ IPLC、IEPL中转，点对点专线连接。高速冲浪，科学上网不二选
     </div>
     <div class="panel-body">
         <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">7</span> <a href="/date/2026-07/" title="2026-07 归档">2026-07</a></h4>
+            </li>
                         <li class="py-2">
                 <h4><span class="badge" style="float: right;">30</span> <a href="/date/2026-06/" title="2026-06 归档">2026-06</a></h4>
             </li>
@@ -377,9 +378,7 @@ IPLC、IEPL中转，点对点专线连接。高速冲浪，科学上网不二选
                         <a href="/privacy.htm">隐私申明</a> |
                         <a href="/sitemap.xml">网站地图</a>
                     </p>
-                                        <div>特别推荐：<b><a href="javascript:;" class="js_to" data-url="https://www.futizi.net/?code=" data-type="Luniuyun" data-code="svvkQf3y" target="_blank">绿牛云</a></b> <p>高速稳定的网络加速</p>
-                        <p>畅享全球内容，访问 ChatGPT、TikTok、Google 等热门网站。
-全平台支持 · 7×24 专业客服 · 采用军工级安全加密传输技术。</p></div>
+                                        <div>特别推荐：<b><a href="javascript:;" class="js_to" data-url="https://c.kilxs.cn/?path=" data-type="Xingchen" data-code="register&code" target="_blank">星辰机场</a></b> <p>【包年送2个月】</p><p>1、购买入门版年付套餐额外送2个月，共14个月，只要99元！！！</p><p>2、购买“至尊天皇”年付套餐，额外送2个月，只要299元！！！</p><p>3、购买其他包月类套餐中的年付，同样送2个月！！！</p><p>错过要再等一年！！</p></div>
                                         Cheap Clash 节点中文站 版权所有 Powered by WordPress
                 </p>
                 <div class="col-lg-4 col-md-12 text-center text-lg-right footer-social">
