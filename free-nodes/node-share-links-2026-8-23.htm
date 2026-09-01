@@ -365,14 +365,9 @@ Shadowrocket允许用户快速在多个代理服务器之间切换，方便应�
     </div>
 <h4>FAQ</h4>
 <div class="panel panel-default">
-    <div class="panel-heading"><h5>VMess MUX 功能如何改善短连接延迟？</h5></div>
+    <div class="panel-heading"><h5>VMess 使用 AEAD 加密后连接性能如何？</h5></div>
     <div class="panel-body">
-        VMess MUX 多路复用可以将多个短连接共享同一 TCP 或 QUIC 隧道，减少重复握手和连接延迟，特别适合游戏、即时通讯或频繁请求的场景，有效提升响应速度。<hr />    </div>
-</div>
-<div class="panel panel-default">
-    <div class="panel-heading"><h5>WinXray 如何实现延迟最低节点自动切换？</h5></div>
-    <div class="panel-body">
-        WinXray 支持节点延迟检测和策略组配置，可自动将流量切换至延迟最低的节点。用户无需手动选择，提高游戏、视频和网页访问速度及稳定性，优化整体网络体验。<hr />    </div>
+        AEAD 加密在保证数据安全的同时，性能开销较低，抗重放攻击能力强。高封锁环境下更稳定，同时减少流量特征泄露，适合长时间和高安全性需求的网络连接。<hr />    </div>
 </div>
 <div class="panel panel-default">
     <div class="panel-heading"><h5>VMess 的安全性是否优于 Shadowsocks？</h5></div>
@@ -380,29 +375,14 @@ Shadowrocket允许用户快速在多个代理服务器之间切换，方便应�
         VMess 拥有动态验证机制和更复杂的握手协议，相较于静态密钥的 Shadowsocks 安全性更高。它能有效抵御重放攻击和 DPI 检测，更适合长期使用。<hr />    </div>
 </div>
 <div class="panel panel-default">
-    <div class="panel-heading"><h5>如何优化 Clash DNS 解析速度？</h5></div>
-    <div class="panel-body">
-        可在配置文件中启用 fake-ip 模式或使用高质量的 DoH 服务（如 Cloudflare、AliDNS）。同时将 `fallback-filter.geoip` 设置为 true，避免国内域名被错误解析到境外，提高解析效率。<hr />    </div>
-</div>
-<div class="panel panel-default">
-    <div class="panel-heading"><h5>PassWall2 在路由器中如何更新节点订阅？</h5></div>
-    <div class="panel-body">
-        在 PassWall2 面板中点击“订阅管理”，输入或更新订阅链接后，点击“手动更新”即可自动下载最新节点数据。也可设置定时任务每日自动更新，保持配置最新。<hr />    </div>
-</div>
-<div class="panel panel-default">
     <div class="panel-heading"><h5>V2RayN 订阅更新后节点重复如何清理？</h5></div>
     <div class="panel-body">
         V2RayN 在导入订阅时有时会产生重复节点，可以点击右键菜单选择“删除重复项”。若仍存在旧节点缓存，可清空配置文件夹内的 history.json 并重新导入订阅，保证节点列表整洁。<hr />    </div>
 </div>
 <div class="panel panel-default">
-    <div class="panel-heading"><h5>VMess 使用 AEAD 加密后连接性能如何？</h5></div>
+    <div class="panel-heading"><h5>如何优化 Clash DNS 解析速度？</h5></div>
     <div class="panel-body">
-        AEAD 加密在保证数据安全的同时，性能开销较低，抗重放攻击能力强。高封锁环境下更稳定，同时减少流量特征泄露，适合长时间和高安全性需求的网络连接。<hr />    </div>
-</div>
-<div class="panel panel-default">
-    <div class="panel-heading"><h5>WinXray 的系统代理模式有哪些？</h5></div>
-    <div class="panel-body">
-        WinXray 支持三种系统代理模式：全局、直连和 PAC 模式。全局模式代理所有流量；直连模式跳过代理；PAC 模式根据规则文件智能判断是否走代理。<hr />    </div>
+        可在配置文件中启用 fake-ip 模式或使用高质量的 DoH 服务（如 Cloudflare、AliDNS）。同时将 `fallback-filter.geoip` 设置为 true，避免国内域名被错误解析到境外，提高解析效率。<hr />    </div>
 </div>
 <div class="panel panel-default">
     <div class="panel-heading"><h5>Clash 如何通过策略组实现多节点负载均衡？</h5></div>
@@ -410,9 +390,29 @@ Shadowrocket允许用户快速在多个代理服务器之间切换，方便应�
         Clash 支持策略组功能，可以根据节点延迟、地区或用途自动选择最佳节点处理流量，实现多节点负载均衡。有效提高访问速度和稳定性，保证网页浏览、视频播放和游戏流畅。<hr />    </div>
 </div>
 <div class="panel panel-default">
+    <div class="panel-heading"><h5>WinXray 如何实现延迟最低节点自动切换？</h5></div>
+    <div class="panel-body">
+        WinXray 支持节点延迟检测和策略组配置，可自动将流量切换至延迟最低的节点。用户无需手动选择，提高游戏、视频和网页访问速度及稳定性，优化整体网络体验。<hr />    </div>
+</div>
+<div class="panel panel-default">
+    <div class="panel-heading"><h5>WinXray 的系统代理模式有哪些？</h5></div>
+    <div class="panel-body">
+        WinXray 支持三种系统代理模式：全局、直连和 PAC 模式。全局模式代理所有流量；直连模式跳过代理；PAC 模式根据规则文件智能判断是否走代理。<hr />    </div>
+</div>
+<div class="panel panel-default">
+    <div class="panel-heading"><h5>PassWall2 在路由器中如何更新节点订阅？</h5></div>
+    <div class="panel-body">
+        在 PassWall2 面板中点击“订阅管理”，输入或更新订阅链接后，点击“手动更新”即可自动下载最新节点数据。也可设置定时任务每日自动更新，保持配置最新。<hr />    </div>
+</div>
+<div class="panel panel-default">
     <div class="panel-heading"><h5>Netch 的全局代理与规则代理有何不同？</h5></div>
     <div class="panel-body">
-        全局代理将所有流量都通过节点转发，而规则代理只针对指定 IP、端口或应用。全局代理适合游戏和全局科学上网，规则代理适合优化带宽和分流特定流量。    </div>
+        全局代理将所有流量都通过节点转发，而规则代理只针对指定 IP、端口或应用。全局代理适合游戏和全局科学上网，规则代理适合优化带宽和分流特定流量。<hr />    </div>
+</div>
+<div class="panel panel-default">
+    <div class="panel-heading"><h5>VMess MUX 功能如何改善短连接延迟？</h5></div>
+    <div class="panel-body">
+        VMess MUX 多路复用可以将多个短连接共享同一 TCP 或 QUIC 隧道，减少重复握手和连接延迟，特别适合游戏、即时通讯或频繁请求的场景，有效提升响应速度。    </div>
 </div>
 <div class="panel panel-default mt-5">
     <div class="panel-heading">
@@ -460,16 +460,16 @@ Shadowrocket允许用户快速在多个代理服务器之间切换，方便应�
     </div>
     <div class="panel-body">
         <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
-                        <li class="py-2"><a href="/free-nodes/2026-7-30-free-clash.htm" title="Cheap Clash - 7月30日19.8M/S|免费Singbox节点/V2ray节点/Clash节点/Shadowrocket节点/SSR节点/Trojan节点节点推荐，Clash梯子购买推荐">Cheap Clash - 7月30日19.8M/S|免费Singbox节点/V2ray节点/Clash节点/Shadowrocket节点/SSR节点/Trojan节点节点推荐，Clash梯子购买推荐</a><hr /></li>
-                        <li class="py-2"><a href="/free-nodes/node-share-links-2026-8-23.htm" title="Cheap Clash - 8月23日19.6M/S|免费V2ray节点/Shadowrocket节点/Singbox节点/Clash节点/SSR节点/Trojan节点节点推荐，Clash梯子购买推荐">Cheap Clash - 8月23日19.6M/S|免费V2ray节点/Shadowrocket节点/Singbox节点/Clash节点/SSR节点/Trojan节点节点推荐，Clash梯子购买推荐</a><hr /></li>
-                        <li class="py-2"><a href="/free-nodes/node-share-links-2026-8-5.htm" title="Cheap Clash - 8月5日22.2M/S|免费Singbox节点/SSR节点/V2ray节点/Clash节点/Trojan节点/Shadowrocket节点节点推荐，Clash梯子购买推荐">Cheap Clash - 8月5日22.2M/S|免费Singbox节点/SSR节点/V2ray节点/Clash节点/Trojan节点/Shadowrocket节点节点推荐，Clash梯子购买推荐</a><hr /></li>
-                        <li class="py-2"><a href="/free-nodes/2026-8-22-free-node-subscribe.htm" title="Cheap Clash - 8月22日18M/S|免费V2ray节点/Shadowrocket节点/Clash节点/SSR节点/Trojan节点/Singbox节点节点推荐，Clash梯子购买推荐">Cheap Clash - 8月22日18M/S|免费V2ray节点/Shadowrocket节点/Clash节点/SSR节点/Trojan节点/Singbox节点节点推荐，Clash梯子购买推荐</a><hr /></li>
+                        <li class="py-2"><a href="/free-nodes/free-subscribe-node-2026-8-9.htm" title="Cheap Clash - 8月9日20.8M/S|免费Clash节点/Shadowrocket节点/SSR节点/Singbox节点/Trojan节点/V2ray节点节点推荐，Clash梯子购买推荐">Cheap Clash - 8月9日20.8M/S|免费Clash节点/Shadowrocket节点/SSR节点/Singbox节点/Trojan节点/V2ray节点节点推荐，Clash梯子购买推荐</a><hr /></li>
+                        <li class="py-2"><a href="/free-nodes/free-clash-subscribe-2026-8-21.htm" title="Cheap Clash - 8月21日22.7M/S|免费V2ray节点/Clash节点/Singbox节点/SSR节点/Shadowrocket节点/Trojan节点节点推荐，Clash梯子购买推荐">Cheap Clash - 8月21日22.7M/S|免费V2ray节点/Clash节点/Singbox节点/SSR节点/Shadowrocket节点/Trojan节点节点推荐，Clash梯子购买推荐</a><hr /></li>
                         <li class="py-2"><a href="/free-nodes/2026-8-18-free-node-subscribe.htm" title="Cheap Clash - 8月18日21M/S|免费Singbox节点/Clash节点/SSR节点/V2ray节点/Shadowrocket节点/Trojan节点节点推荐，Clash梯子购买推荐">Cheap Clash - 8月18日21M/S|免费Singbox节点/Clash节点/SSR节点/V2ray节点/Shadowrocket节点/Trojan节点节点推荐，Clash梯子购买推荐</a><hr /></li>
-                        <li class="py-2"><a href="/free-nodes/2026-8-20-free-clash.htm" title="Cheap Clash - 8月20日21.8M/S|免费Clash节点/V2ray节点/SSR节点/Singbox节点/Trojan节点/Shadowrocket节点节点推荐，Clash梯子购买推荐">Cheap Clash - 8月20日21.8M/S|免费Clash节点/V2ray节点/SSR节点/Singbox节点/Trojan节点/Shadowrocket节点节点推荐，Clash梯子购买推荐</a><hr /></li>
-                        <li class="py-2"><a href="/free-nodes/2026-8-10-node-share.htm" title="Cheap Clash - 8月10日18.2M/S|免费Trojan节点/V2ray节点/Clash节点/Shadowrocket节点/Singbox节点/SSR节点节点推荐，Clash梯子购买推荐">Cheap Clash - 8月10日18.2M/S|免费Trojan节点/V2ray节点/Clash节点/Shadowrocket节点/Singbox节点/SSR节点节点推荐，Clash梯子购买推荐</a><hr /></li>
+                        <li class="py-2"><a href="/free-nodes/free-clash-subscribe-2026-8-27.htm" title="Cheap Clash - 8月27日22.1M/S|免费Shadowrocket节点/Singbox节点/V2ray节点/Clash节点/Trojan节点/SSR节点节点推荐，Clash梯子购买推荐">Cheap Clash - 8月27日22.1M/S|免费Shadowrocket节点/Singbox节点/V2ray节点/Clash节点/Trojan节点/SSR节点节点推荐，Clash梯子购买推荐</a><hr /></li>
+                        <li class="py-2"><a href="/free-nodes/free-clash-subscribe-2026-8-1.htm" title="Cheap Clash - 8月1日19.8M/S|免费Trojan节点/Singbox节点/Clash节点/V2ray节点/SSR节点/Shadowrocket节点节点推荐，Clash梯子购买推荐">Cheap Clash - 8月1日19.8M/S|免费Trojan节点/Singbox节点/Clash节点/V2ray节点/SSR节点/Shadowrocket节点节点推荐，Clash梯子购买推荐</a><hr /></li>
+                        <li class="py-2"><a href="/free-nodes/free-subscribe-node-2026-8-29.htm" title="Cheap Clash - 8月29日20.5M/S|免费V2ray节点/Shadowrocket节点/Singbox节点/Trojan节点/SSR节点/Clash节点节点推荐，Clash梯子购买推荐">Cheap Clash - 8月29日20.5M/S|免费V2ray节点/Shadowrocket节点/Singbox节点/Trojan节点/SSR节点/Clash节点节点推荐，Clash梯子购买推荐</a><hr /></li>
+                        <li class="py-2"><a href="/free-nodes/free-clash-subscribe-2026-7-29.htm" title="Cheap Clash - 7月29日22.5M/S|免费Trojan节点/V2ray节点/Shadowrocket节点/SSR节点/Singbox节点/Clash节点节点推荐，Clash梯子购买推荐">Cheap Clash - 7月29日22.5M/S|免费Trojan节点/V2ray节点/Shadowrocket节点/SSR节点/Singbox节点/Clash节点节点推荐，Clash梯子购买推荐</a><hr /></li>
+                        <li class="py-2"><a href="/free-nodes/2026-7-30-free-clash.htm" title="Cheap Clash - 7月30日19.8M/S|免费Singbox节点/V2ray节点/Clash节点/Shadowrocket节点/SSR节点/Trojan节点节点推荐，Clash梯子购买推荐">Cheap Clash - 7月30日19.8M/S|免费Singbox节点/V2ray节点/Clash节点/Shadowrocket节点/SSR节点/Trojan节点节点推荐，Clash梯子购买推荐</a><hr /></li>
+                        <li class="py-2"><a href="/free-nodes/2026-7-26-clash-node.htm" title="Cheap Clash - 7月26日19.8M/S|免费Singbox节点/Clash节点/Shadowrocket节点/V2ray节点/SSR节点/Trojan节点节点推荐，Clash梯子购买推荐">Cheap Clash - 7月26日19.8M/S|免费Singbox节点/Clash节点/Shadowrocket节点/V2ray节点/SSR节点/Trojan节点节点推荐，Clash梯子购买推荐</a><hr /></li>
                         <li class="py-2"><a href="/free-nodes/2026-7-27-free-subscribe-node.htm" title="Cheap Clash - 7月27日21.3M/S|免费Clash节点/V2ray节点/SSR节点/Trojan节点/Shadowrocket节点/Singbox节点节点推荐，Clash梯子购买推荐">Cheap Clash - 7月27日21.3M/S|免费Clash节点/V2ray节点/SSR节点/Trojan节点/Shadowrocket节点/Singbox节点节点推荐，Clash梯子购买推荐</a><hr /></li>
-                        <li class="py-2"><a href="/free-nodes/2026-8-12-free-node-subscribe.htm" title="Cheap Clash - 8月12日22.8M/S|免费Singbox节点/Trojan节点/Shadowrocket节点/SSR节点/Clash节点/V2ray节点节点推荐，Clash梯子购买推荐">Cheap Clash - 8月12日22.8M/S|免费Singbox节点/Trojan节点/Shadowrocket节点/SSR节点/Clash节点/V2ray节点节点推荐，Clash梯子购买推荐</a><hr /></li>
-                        <li class="py-2"><a href="/free-nodes/2026-7-25-free-subscribe-node.htm" title="Cheap Clash - 7月25日22.2M/S|免费Clash节点/Singbox节点/Trojan节点/V2ray节点/SSR节点/Shadowrocket节点节点推荐，Clash梯子购买推荐">Cheap Clash - 7月25日22.2M/S|免费Clash节点/Singbox节点/Trojan节点/V2ray节点/SSR节点/Shadowrocket节点节点推荐，Clash梯子购买推荐</a><hr /></li>
                     </ul>
     </div>
 </div>
@@ -481,7 +481,10 @@ Shadowrocket允许用户快速在多个代理服务器之间切换，方便应�
     <div class="panel-body">
         <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
                         <li class="py-2">
-                <h4><span class="badge" style="float: right;">25</span> <a href="/date/2026-08/" title="2026-08 归档">2026-08</a></h4>
+                <h4><span class="badge" style="float: right;">1</span> <a href="/date/2026-09/" title="2026-09 归档">2026-09</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">31</span> <a href="/date/2026-08/" title="2026-08 归档">2026-08</a></h4>
             </li>
                         <li class="py-2">
                 <h4><span class="badge" style="float: right;">13</span> <a href="/date/2026-07/" title="2026-07 归档">2026-07</a></h4>
