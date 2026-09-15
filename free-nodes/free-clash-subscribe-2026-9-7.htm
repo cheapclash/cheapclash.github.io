@@ -249,24 +249,9 @@ sudo systemctl start v2ray
     </div>
 <h4>FAQ</h4>
 <div class="panel panel-default">
-    <div class="panel-heading"><h5>V2RayN 的 GUI 界面如何导出节点？</h5></div>
+    <div class="panel-heading"><h5>Trojan 节点无法连接时应如何排查？</h5></div>
     <div class="panel-body">
-        V2RayN 提供节点导出功能，可生成分享链接或二维码。用户右键节点选择“分享”即可导出，以便在其他设备导入同样的代理配置，保持同步使用体验。<hr />    </div>
-</div>
-<div class="panel panel-default">
-    <div class="panel-heading"><h5>Trojan 使用自签名证书会带来哪些问题？</h5></div>
-    <div class="panel-body">
-        自签名证书无法被客户端默认信任，可能导致连接失败或需要手动安装证书。它也容易被中间人伪造识别，不利于长期生产环境安全部署，建议使用可信 CA 证书以获得更好兼容性与安全性。<hr />    </div>
-</div>
-<div class="panel panel-default">
-    <div class="panel-heading"><h5>Shadowrocket 节点延迟排序如何提升访问体验？</h5></div>
-    <div class="panel-body">
-        Shadowrocket 会测速节点延迟和丢包率，并优先使用低延迟节点。结合策略组和分流规则，可保证网页、视频和游戏流量通过最优节点，提高访问速度和稳定性。<hr />    </div>
-</div>
-<div class="panel panel-default">
-    <div class="panel-heading"><h5>VLESS + XTLS 模式在移动网络下表现如何？</h5></div>
-    <div class="panel-body">
-        XTLS 模式减少握手次数和加密开销，适合高延迟或不稳定移动网络。结合策略组和多出口节点，可提高访问速度和连接稳定性，保证用户体验流畅。<hr />    </div>
+        遇到 Trojan 无法连接时，需检查服务器证书是否有效、端口是否开放、密码配置是否匹配。还应确认防火墙未阻断相关端口，并尝试切换 TLS 版本或使用 IP 地址连接。<hr />    </div>
 </div>
 <div class="panel panel-default">
     <div class="panel-heading"><h5>VLESS + XTLS 在移动网络的优势？</h5></div>
@@ -274,9 +259,9 @@ sudo systemctl start v2ray
         XTLS 模式减少握手次数和加密开销，适合高延迟或不稳定的移动网络。结合策略组和多节点切换，可提升网页浏览、视频播放和游戏的连接稳定性和流畅度。<hr />    </div>
 </div>
 <div class="panel panel-default">
-    <div class="panel-heading"><h5>如何把 Clash 规则与本地 hosts 文件结合使用？</h5></div>
+    <div class="panel-heading"><h5>Trojan 服务端出现 handshake timeout 如何处理？</h5></div>
     <div class="panel-body">
-        可在 Clash 的 rules 中优先设置域名直连规则，并在系统 hosts 中添加常用站点的固定解析以加速 DNS 解析。注意 hosts 优先级高于 DNS，因此修改 hosts 需谨慎以避免与真实解析冲突。<hr />    </div>
+        该错误通常由网络延迟或证书配置不一致导致。请检查服务器带宽是否充足、TLS 证书链完整，并确保客户端 SNI 与证书匹配。必要时更换节点或优化拥塞控制算法。<hr />    </div>
 </div>
 <div class="panel panel-default">
     <div class="panel-heading"><h5>VLESS + XTLS 模式在高并发下有什么优势？</h5></div>
@@ -284,19 +269,34 @@ sudo systemctl start v2ray
         XTLS 模式减少握手次数和加密冗余，提高 CPU 利用率和吞吐量。在高并发场景下能保持连接稳定，适合游戏、流媒体和频繁请求的网络环境，提升整体性能。<hr />    </div>
 </div>
 <div class="panel panel-default">
+    <div class="panel-heading"><h5>Trojan 使用自签名证书会带来哪些问题？</h5></div>
+    <div class="panel-body">
+        自签名证书无法被客户端默认信任，可能导致连接失败或需要手动安装证书。它也容易被中间人伪造识别，不利于长期生产环境安全部署，建议使用可信 CA 证书以获得更好兼容性与安全性。<hr />    </div>
+</div>
+<div class="panel panel-default">
+    <div class="panel-heading"><h5>如何把 Clash 规则与本地 hosts 文件结合使用？</h5></div>
+    <div class="panel-body">
+        可在 Clash 的 rules 中优先设置域名直连规则，并在系统 hosts 中添加常用站点的固定解析以加速 DNS 解析。注意 hosts 优先级高于 DNS，因此修改 hosts 需谨慎以避免与真实解析冲突。<hr />    </div>
+</div>
+<div class="panel panel-default">
+    <div class="panel-heading"><h5>V2RayN 的 GUI 界面如何导出节点？</h5></div>
+    <div class="panel-body">
+        V2RayN 提供节点导出功能，可生成分享链接或二维码。用户右键节点选择“分享”即可导出，以便在其他设备导入同样的代理配置，保持同步使用体验。<hr />    </div>
+</div>
+<div class="panel panel-default">
+    <div class="panel-heading"><h5>Shadowrocket 节点延迟排序如何提升访问体验？</h5></div>
+    <div class="panel-body">
+        Shadowrocket 会测速节点延迟和丢包率，并优先使用低延迟节点。结合策略组和分流规则，可保证网页、视频和游戏流量通过最优节点，提高访问速度和稳定性。<hr />    </div>
+</div>
+<div class="panel panel-default">
     <div class="panel-heading"><h5>SSR 的协议插件如何增强连接稳定性？</h5></div>
     <div class="panel-body">
         SSR 的协议插件可以增加流量的伪装特性，模拟常见协议或浏览器行为，从而降低被识别和封锁的风险。这对不稳定网络或高封锁环境尤其有帮助。<hr />    </div>
 </div>
 <div class="panel panel-default">
-    <div class="panel-heading"><h5>Trojan 服务端出现 handshake timeout 如何处理？</h5></div>
+    <div class="panel-heading"><h5>VLESS + XTLS 模式在移动网络下表现如何？</h5></div>
     <div class="panel-body">
-        该错误通常由网络延迟或证书配置不一致导致。请检查服务器带宽是否充足、TLS 证书链完整，并确保客户端 SNI 与证书匹配。必要时更换节点或优化拥塞控制算法。<hr />    </div>
-</div>
-<div class="panel panel-default">
-    <div class="panel-heading"><h5>Trojan 节点无法连接时应如何排查？</h5></div>
-    <div class="panel-body">
-        遇到 Trojan 无法连接时，需检查服务器证书是否有效、端口是否开放、密码配置是否匹配。还应确认防火墙未阻断相关端口，并尝试切换 TLS 版本或使用 IP 地址连接。    </div>
+        XTLS 模式减少握手次数和加密开销，适合高延迟或不稳定移动网络。结合策略组和多出口节点，可提高访问速度和连接稳定性，保证用户体验流畅。    </div>
 </div>
 <div class="panel panel-default mt-5">
     <div class="panel-heading">
@@ -344,16 +344,16 @@ sudo systemctl start v2ray
     </div>
     <div class="panel-body">
         <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
-                        <li class="py-2"><a href="/free-nodes/2026-8-8-clash-node.htm" title="Cheap Clash - 8月8日21.4M/S|免费Clash节点/SSR节点/V2ray节点/Singbox节点/Shadowrocket节点/Trojan节点节点推荐，Clash梯子购买推荐">Cheap Clash - 8月8日21.4M/S|免费Clash节点/SSR节点/V2ray节点/Singbox节点/Shadowrocket节点/Trojan节点节点推荐，Clash梯子购买推荐</a><hr /></li>
-                        <li class="py-2"><a href="/free-nodes/node-share-links-2026-8-13.htm" title="Cheap Clash - 8月13日21.8M/S|免费Singbox节点/Trojan节点/SSR节点/Shadowrocket节点/Clash节点/V2ray节点节点推荐，Clash梯子购买推荐">Cheap Clash - 8月13日21.8M/S|免费Singbox节点/Trojan节点/SSR节点/Shadowrocket节点/Clash节点/V2ray节点节点推荐，Clash梯子购买推荐</a><hr /></li>
-                        <li class="py-2"><a href="/free-nodes/free-clash-subscribe-2026-8-11.htm" title="Cheap Clash - 8月11日19.6M/S|免费Shadowrocket节点/Trojan节点/Singbox节点/Clash节点/SSR节点/V2ray节点节点推荐，Clash梯子购买推荐">Cheap Clash - 8月11日19.6M/S|免费Shadowrocket节点/Trojan节点/Singbox节点/Clash节点/SSR节点/V2ray节点节点推荐，Clash梯子购买推荐</a><hr /></li>
-                        <li class="py-2"><a href="/free-nodes/2026-9-8-free-clash.htm" title="Cheap Clash - 9月8日18.7M/S|免费Shadowrocket节点/V2ray节点/SSR节点/Singbox节点/Trojan节点/Clash节点节点推荐，Clash梯子购买推荐">Cheap Clash - 9月8日18.7M/S|免费Shadowrocket节点/V2ray节点/SSR节点/Singbox节点/Trojan节点/Clash节点节点推荐，Clash梯子购买推荐</a><hr /></li>
-                        <li class="py-2"><a href="/free-nodes/free-clash-subscribe-2026-8-27.htm" title="Cheap Clash - 8月27日22.1M/S|免费Shadowrocket节点/Singbox节点/V2ray节点/Clash节点/Trojan节点/SSR节点节点推荐，Clash梯子购买推荐">Cheap Clash - 8月27日22.1M/S|免费Shadowrocket节点/Singbox节点/V2ray节点/Clash节点/Trojan节点/SSR节点节点推荐，Clash梯子购买推荐</a><hr /></li>
+                        <li class="py-2"><a href="/free-nodes/2026-8-20-free-clash.htm" title="Cheap Clash - 8月20日21.8M/S|免费Clash节点/V2ray节点/SSR节点/Singbox节点/Trojan节点/Shadowrocket节点节点推荐，Clash梯子购买推荐">Cheap Clash - 8月20日21.8M/S|免费Clash节点/V2ray节点/SSR节点/Singbox节点/Trojan节点/Shadowrocket节点节点推荐，Clash梯子购买推荐</a><hr /></li>
                         <li class="py-2"><a href="/free-nodes/2026-8-16-clash-v2ray-ss-ssr.htm" title="Cheap Clash - 8月16日20.1M/S|免费Singbox节点/Shadowrocket节点/V2ray节点/Clash节点/SSR节点/Trojan节点节点推荐，Clash梯子购买推荐">Cheap Clash - 8月16日20.1M/S|免费Singbox节点/Shadowrocket节点/V2ray节点/Clash节点/SSR节点/Trojan节点节点推荐，Clash梯子购买推荐</a><hr /></li>
-                        <li class="py-2"><a href="/free-nodes/shadowrocket-node-2026-8-25.htm" title="Cheap Clash - 8月25日21.8M/S|免费Clash节点/Trojan节点/SSR节点/Shadowrocket节点/V2ray节点/Singbox节点节点推荐，Clash梯子购买推荐">Cheap Clash - 8月25日21.8M/S|免费Clash节点/Trojan节点/SSR节点/Shadowrocket节点/V2ray节点/Singbox节点节点推荐，Clash梯子购买推荐</a><hr /></li>
-                        <li class="py-2"><a href="/free-nodes/2026-8-12-free-node-subscribe.htm" title="Cheap Clash - 8月12日22.8M/S|免费Singbox节点/Trojan节点/Shadowrocket节点/SSR节点/Clash节点/V2ray节点节点推荐，Clash梯子购买推荐">Cheap Clash - 8月12日22.8M/S|免费Singbox节点/Trojan节点/Shadowrocket节点/SSR节点/Clash节点/V2ray节点节点推荐，Clash梯子购买推荐</a><hr /></li>
-                        <li class="py-2"><a href="/free-nodes/free-subscribe-node-2026-8-9.htm" title="Cheap Clash - 8月9日20.8M/S|免费Clash节点/Shadowrocket节点/SSR节点/Singbox节点/Trojan节点/V2ray节点节点推荐，Clash梯子购买推荐">Cheap Clash - 8月9日20.8M/S|免费Clash节点/Shadowrocket节点/SSR节点/Singbox节点/Trojan节点/V2ray节点节点推荐，Clash梯子购买推荐</a><hr /></li>
+                        <li class="py-2"><a href="/free-nodes/free-clash-subscribe-2026-8-11.htm" title="Cheap Clash - 8月11日19.6M/S|免费Shadowrocket节点/Trojan节点/Singbox节点/Clash节点/SSR节点/V2ray节点节点推荐，Clash梯子购买推荐">Cheap Clash - 8月11日19.6M/S|免费Shadowrocket节点/Trojan节点/Singbox节点/Clash节点/SSR节点/V2ray节点节点推荐，Clash梯子购买推荐</a><hr /></li>
+                        <li class="py-2"><a href="/free-nodes/free-subscribe-node-2026-8-17.htm" title="Cheap Clash - 8月17日18M/S|免费V2ray节点/Clash节点/Shadowrocket节点/Singbox节点/Trojan节点/SSR节点节点推荐，Clash梯子购买推荐">Cheap Clash - 8月17日18M/S|免费V2ray节点/Clash节点/Shadowrocket节点/Singbox节点/Trojan节点/SSR节点节点推荐，Clash梯子购买推荐</a><hr /></li>
+                        <li class="py-2"><a href="/free-nodes/free-node-subscribe-links-2026-9-13.htm" title="Cheap Clash - 9月13日22.3M/S|免费Trojan节点/Clash节点/SSR节点/Shadowrocket节点/V2ray节点/Singbox节点节点推荐，Clash梯子购买推荐">Cheap Clash - 9月13日22.3M/S|免费Trojan节点/Clash节点/SSR节点/Shadowrocket节点/V2ray节点/Singbox节点节点推荐，Clash梯子购买推荐</a><hr /></li>
+                        <li class="py-2"><a href="/free-nodes/free-node-subscribe-links-2026-9-9.htm" title="Cheap Clash - 9月9日22.9M/S|免费SSR节点/Trojan节点/Singbox节点/Clash节点/V2ray节点/Shadowrocket节点节点推荐，Clash梯子购买推荐">Cheap Clash - 9月9日22.9M/S|免费SSR节点/Trojan节点/Singbox节点/Clash节点/V2ray节点/Shadowrocket节点节点推荐，Clash梯子购买推荐</a><hr /></li>
+                        <li class="py-2"><a href="/free-nodes/shadowrocket-node-2026-9-1.htm" title="Cheap Clash - 9月1日22.1M/S|免费Singbox节点/Clash节点/Trojan节点/V2ray节点/SSR节点/Shadowrocket节点节点推荐，Clash梯子购买推荐">Cheap Clash - 9月1日22.1M/S|免费Singbox节点/Clash节点/Trojan节点/V2ray节点/SSR节点/Shadowrocket节点节点推荐，Clash梯子购买推荐</a><hr /></li>
+                        <li class="py-2"><a href="/free-nodes/2026-8-24-free-clash.htm" title="Cheap Clash - 8月24日18.4M/S|免费Trojan节点/SSR节点/V2ray节点/Clash节点/Shadowrocket节点/Singbox节点节点推荐，Clash梯子购买推荐">Cheap Clash - 8月24日18.4M/S|免费Trojan节点/SSR节点/V2ray节点/Clash节点/Shadowrocket节点/Singbox节点节点推荐，Clash梯子购买推荐</a><hr /></li>
                         <li class="py-2"><a href="/free-nodes/2026-8-10-node-share.htm" title="Cheap Clash - 8月10日18.2M/S|免费Trojan节点/V2ray节点/Clash节点/Shadowrocket节点/Singbox节点/SSR节点节点推荐，Clash梯子购买推荐">Cheap Clash - 8月10日18.2M/S|免费Trojan节点/V2ray节点/Clash节点/Shadowrocket节点/Singbox节点/SSR节点节点推荐，Clash梯子购买推荐</a><hr /></li>
+                        <li class="py-2"><a href="/free-nodes/2026-8-28-clash-node.htm" title="Cheap Clash - 8月28日18.7M/S|免费Trojan节点/Singbox节点/SSR节点/Clash节点/Shadowrocket节点/V2ray节点节点推荐，Clash梯子购买推荐">Cheap Clash - 8月28日18.7M/S|免费Trojan节点/Singbox节点/SSR节点/Clash节点/Shadowrocket节点/V2ray节点节点推荐，Clash梯子购买推荐</a><hr /></li>
                     </ul>
     </div>
 </div>
@@ -365,7 +365,7 @@ sudo systemctl start v2ray
     <div class="panel-body">
         <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
                         <li class="py-2">
-                <h4><span class="badge" style="float: right;">8</span> <a href="/date/2026-09/" title="2026-09 归档">2026-09</a></h4>
+                <h4><span class="badge" style="float: right;">15</span> <a href="/date/2026-09/" title="2026-09 归档">2026-09</a></h4>
             </li>
                         <li class="py-2">
                 <h4><span class="badge" style="float: right;">26</span> <a href="/date/2026-08/" title="2026-08 归档">2026-08</a></h4>
