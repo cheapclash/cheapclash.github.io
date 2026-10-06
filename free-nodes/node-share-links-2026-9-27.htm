@@ -268,9 +268,9 @@ Clash可以通过集成方式，将多名用户的网络需求集中到一台服
     </div>
 <h4>FAQ</h4>
 <div class="panel panel-default">
-    <div class="panel-heading"><h5>Clash 的 Proxy Group 能实现哪些策略？</h5></div>
+    <div class="panel-heading"><h5>Trojan 节点无法连接时应如何排查？</h5></div>
     <div class="panel-body">
-        Proxy Group 可以定义多种策略，如按延迟选择、随机、轮询或手动选择节点。结合分流规则，可实现针对不同网站或应用的智能代理，提高网络体验。<hr />    </div>
+        遇到 Trojan 无法连接时，需检查服务器证书是否有效、端口是否开放、密码配置是否匹配。还应确认防火墙未阻断相关端口，并尝试切换 TLS 版本或使用 IP 地址连接。<hr />    </div>
 </div>
 <div class="panel panel-default">
     <div class="panel-heading"><h5>如何更新 Clash 的订阅节点？</h5></div>
@@ -278,24 +278,9 @@ Clash可以通过集成方式，将多名用户的网络需求集中到一台服
         在 Clash 中更新订阅节点，只需在配置页面中点击“Update”或“Refresh”按钮即可。系统会重新下载订阅链接中的内容，自动替换旧节点。这样能确保用户随时获取最新可用节点，避免连接失败或延迟过高。<hr />    </div>
 </div>
 <div class="panel panel-default">
-    <div class="panel-heading"><h5>Trojan 节点无法连接时应如何排查？</h5></div>
-    <div class="panel-body">
-        遇到 Trojan 无法连接时，需检查服务器证书是否有效、端口是否开放、密码配置是否匹配。还应确认防火墙未阻断相关端口，并尝试切换 TLS 版本或使用 IP 地址连接。<hr />    </div>
-</div>
-<div class="panel panel-default">
-    <div class="panel-heading"><h5>Clash 是什么？它主要有什么用途？</h5></div>
-    <div class="panel-body">
-        Clash 是一个跨平台的代理客户端，支持多种代理协议，如 Vmess、Vless、Trojan 和 Shadowsocks 等。它主要用于分流管理、网络代理和科学上网，用户可以通过配置文件灵活控制网络流量，实现不同网站或应用走不同代理。<hr />    </div>
-</div>
-<div class="panel panel-default">
     <div class="panel-heading"><h5>如何安全地共享订阅链接而不泄露个人信息？</h5></div>
     <div class="panel-body">
         避免将私人订阅直接在公开场合分享，若需要共享可在服务端生成只读或限速专用订阅，并定期更换 token。对外公开时移除或隐藏用户识别字段，确保他人无法通过订阅追溯出个人账户信息。<hr />    </div>
-</div>
-<div class="panel panel-default">
-    <div class="panel-heading"><h5>VMess 的 TLS 选项何时使用最合适？</h5></div>
-    <div class="panel-body">
-        TLS 可提供加密和伪装，适合在高封锁或不稳定网络环境使用。结合域名伪装和证书，可让流量看起来像普通 HTTPS 请求，提升抗封锁能力和隐蔽性。<hr />    </div>
 </div>
 <div class="panel panel-default">
     <div class="panel-heading"><h5>Hysteria2 多路复用如何优化短连接性能？</h5></div>
@@ -308,14 +293,29 @@ Clash可以通过集成方式，将多名用户的网络需求集中到一台服
         VMess 连接不稳定可能由节点延迟过高、服务器防火墙、TLS 配置错误或 ISP 丢包引起。建议测试不同传输协议（如 WS、gRPC）或切换节点，检查日志确认具体错误信息。<hr />    </div>
 </div>
 <div class="panel panel-default">
-    <div class="panel-heading"><h5>VLess 使用 XTLS 时证书怎么配置更安全？</h5></div>
+    <div class="panel-heading"><h5>VMess 的 TLS 选项何时使用最合适？</h5></div>
     <div class="panel-body">
-        推荐使用可信 CA 签发的证书（例如 Let's Encrypt），并为服务器配置正确的域名、SNI 与证书链。避免使用自签名证书或错误域名，以免被客户端拒绝或被中间人攻击检测到。<hr />    </div>
+        TLS 可提供加密和伪装，适合在高封锁或不稳定网络环境使用。结合域名伪装和证书，可让流量看起来像普通 HTTPS 请求，提升抗封锁能力和隐蔽性。<hr />    </div>
+</div>
+<div class="panel panel-default">
+    <div class="panel-heading"><h5>Clash 是什么？它主要有什么用途？</h5></div>
+    <div class="panel-body">
+        Clash 是一个跨平台的代理客户端，支持多种代理协议，如 Vmess、Vless、Trojan 和 Shadowsocks 等。它主要用于分流管理、网络代理和科学上网，用户可以通过配置文件灵活控制网络流量，实现不同网站或应用走不同代理。<hr />    </div>
+</div>
+<div class="panel panel-default">
+    <div class="panel-heading"><h5>Clash 的 Proxy Group 能实现哪些策略？</h5></div>
+    <div class="panel-body">
+        Proxy Group 可以定义多种策略，如按延迟选择、随机、轮询或手动选择节点。结合分流规则，可实现针对不同网站或应用的智能代理，提高网络体验。<hr />    </div>
 </div>
 <div class="panel panel-default">
     <div class="panel-heading"><h5>Netch 如何结合节点测速实现自动分流？</h5></div>
     <div class="panel-body">
-        Netch 可以结合节点延迟检测和策略组，将不同类型的流量分配到低延迟节点。提高网页、视频和游戏访问速度及稳定性，优化整体网络体验。    </div>
+        Netch 可以结合节点延迟检测和策略组，将不同类型的流量分配到低延迟节点。提高网页、视频和游戏访问速度及稳定性，优化整体网络体验。<hr />    </div>
+</div>
+<div class="panel panel-default">
+    <div class="panel-heading"><h5>VLess 使用 XTLS 时证书怎么配置更安全？</h5></div>
+    <div class="panel-body">
+        推荐使用可信 CA 签发的证书（例如 Let's Encrypt），并为服务器配置正确的域名、SNI 与证书链。避免使用自签名证书或错误域名，以免被客户端拒绝或被中间人攻击检测到。    </div>
 </div>
 <div class="panel panel-default mt-5">
     <div class="panel-heading">
@@ -363,16 +363,16 @@ Clash可以通过集成方式，将多名用户的网络需求集中到一台服
     </div>
     <div class="panel-body">
         <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
-                        <li class="py-2"><a href="/free-nodes/node-share-links-2026-8-7.htm" title="Cheap Clash - 8月7日19.4M/S|免费SSR节点/Clash节点/V2ray节点/Trojan节点/Shadowrocket节点/Singbox节点节点推荐，Clash梯子购买推荐">Cheap Clash - 8月7日19.4M/S|免费SSR节点/Clash节点/V2ray节点/Trojan节点/Shadowrocket节点/Singbox节点节点推荐，Clash梯子购买推荐</a><hr /></li>
+                        <li class="py-2"><a href="/free-nodes/2026-9-8-free-clash.htm" title="Cheap Clash - 9月8日18.7M/S|免费Shadowrocket节点/V2ray节点/SSR节点/Singbox节点/Trojan节点/Clash节点节点推荐，Clash梯子购买推荐">Cheap Clash - 9月8日18.7M/S|免费Shadowrocket节点/V2ray节点/SSR节点/Singbox节点/Trojan节点/Clash节点节点推荐，Clash梯子购买推荐</a><hr /></li>
+                        <li class="py-2"><a href="/free-nodes/2026-10-4-node-share.htm" title="Cheap Clash - 10月4日18.3M/S|免费Shadowrocket节点/V2ray节点/Singbox节点/SSR节点/Trojan节点/Clash节点节点推荐，Clash梯子购买推荐">Cheap Clash - 10月4日18.3M/S|免费Shadowrocket节点/V2ray节点/Singbox节点/SSR节点/Trojan节点/Clash节点节点推荐，Clash梯子购买推荐</a><hr /></li>
+                        <li class="py-2"><a href="/free-nodes/shadowrocket-node-2026-9-19.htm" title="Cheap Clash - 9月19日20.6M/S|免费V2ray节点/Trojan节点/Clash节点/Singbox节点/Shadowrocket节点/SSR节点节点推荐，Clash梯子购买推荐">Cheap Clash - 9月19日20.6M/S|免费V2ray节点/Trojan节点/Clash节点/Singbox节点/Shadowrocket节点/SSR节点节点推荐，Clash梯子购买推荐</a><hr /></li>
+                        <li class="py-2"><a href="/free-nodes/2026-9-6-free-node-subscribe.htm" title="Cheap Clash - 9月6日20.7M/S|免费Shadowrocket节点/Clash节点/V2ray节点/SSR节点/Singbox节点/Trojan节点节点推荐，Clash梯子购买推荐">Cheap Clash - 9月6日20.7M/S|免费Shadowrocket节点/Clash节点/V2ray节点/SSR节点/Singbox节点/Trojan节点节点推荐，Clash梯子购买推荐</a><hr /></li>
+                        <li class="py-2"><a href="/free-nodes/2026-9-18-clash-v2ray-ss-ssr.htm" title="Cheap Clash - 9月18日20.6M/S|免费Trojan节点/V2ray节点/SSR节点/Shadowrocket节点/Clash节点/Singbox节点节点推荐，Clash梯子购买推荐">Cheap Clash - 9月18日20.6M/S|免费Trojan节点/V2ray节点/SSR节点/Shadowrocket节点/Clash节点/Singbox节点节点推荐，Clash梯子购买推荐</a><hr /></li>
+                        <li class="py-2"><a href="/free-nodes/2026-9-20-clash-node.htm" title="Cheap Clash - 9月20日18.3M/S|免费Singbox节点/Shadowrocket节点/SSR节点/V2ray节点/Trojan节点/Clash节点节点推荐，Clash梯子购买推荐">Cheap Clash - 9月20日18.3M/S|免费Singbox节点/Shadowrocket节点/SSR节点/V2ray节点/Trojan节点/Clash节点节点推荐，Clash梯子购买推荐</a><hr /></li>
+                        <li class="py-2"><a href="/free-nodes/free-subscribe-node-2026-10-5.htm" title="Cheap Clash - 10月5日20.9M/S|免费Shadowrocket节点/SSR节点/Singbox节点/Clash节点/Trojan节点/V2ray节点节点推荐，Clash梯子购买推荐">Cheap Clash - 10月5日20.9M/S|免费Shadowrocket节点/SSR节点/Singbox节点/Clash节点/Trojan节点/V2ray节点节点推荐，Clash梯子购买推荐</a><hr /></li>
                         <li class="py-2"><a href="/free-nodes/2026-9-2-free-clash.htm" title="Cheap Clash - 9月2日19.3M/S|免费Shadowrocket节点/V2ray节点/Trojan节点/SSR节点/Clash节点/Singbox节点节点推荐，Clash梯子购买推荐">Cheap Clash - 9月2日19.3M/S|免费Shadowrocket节点/V2ray节点/Trojan节点/SSR节点/Clash节点/Singbox节点节点推荐，Clash梯子购买推荐</a><hr /></li>
-                        <li class="py-2"><a href="/free-nodes/2026-8-20-free-clash.htm" title="Cheap Clash - 8月20日21.8M/S|免费Clash节点/V2ray节点/SSR节点/Singbox节点/Trojan节点/Shadowrocket节点节点推荐，Clash梯子购买推荐">Cheap Clash - 8月20日21.8M/S|免费Clash节点/V2ray节点/SSR节点/Singbox节点/Trojan节点/Shadowrocket节点节点推荐，Clash梯子购买推荐</a><hr /></li>
-                        <li class="py-2"><a href="/free-nodes/2026-9-16-free-clash.htm" title="Cheap Clash - 9月16日22.6M/S|免费V2ray节点/SSR节点/Clash节点/Trojan节点/Shadowrocket节点/Singbox节点节点推荐，Clash梯子购买推荐">Cheap Clash - 9月16日22.6M/S|免费V2ray节点/SSR节点/Clash节点/Trojan节点/Shadowrocket节点/Singbox节点节点推荐，Clash梯子购买推荐</a><hr /></li>
-                        <li class="py-2"><a href="/free-nodes/free-subscribe-node-2026-9-23.htm" title="Cheap Clash - 9月23日18.7M/S|免费Trojan节点/Shadowrocket节点/SSR节点/V2ray节点/Singbox节点/Clash节点节点推荐，Clash梯子购买推荐">Cheap Clash - 9月23日18.7M/S|免费Trojan节点/Shadowrocket节点/SSR节点/V2ray节点/Singbox节点/Clash节点节点推荐，Clash梯子购买推荐</a><hr /></li>
-                        <li class="py-2"><a href="/free-nodes/2026-8-6-free-clash.htm" title="Cheap Clash - 8月6日20.8M/S|免费Trojan节点/Clash节点/Shadowrocket节点/SSR节点/Singbox节点/V2ray节点节点推荐，Clash梯子购买推荐">Cheap Clash - 8月6日20.8M/S|免费Trojan节点/Clash节点/Shadowrocket节点/SSR节点/Singbox节点/V2ray节点节点推荐，Clash梯子购买推荐</a><hr /></li>
-                        <li class="py-2"><a href="/free-nodes/free-node-subscribe-links-2026-8-15.htm" title="Cheap Clash - 8月15日20.2M/S|免费Singbox节点/Shadowrocket节点/Clash节点/Trojan节点/V2ray节点/SSR节点节点推荐，Clash梯子购买推荐">Cheap Clash - 8月15日20.2M/S|免费Singbox节点/Shadowrocket节点/Clash节点/Trojan节点/V2ray节点/SSR节点节点推荐，Clash梯子购买推荐</a><hr /></li>
-                        <li class="py-2"><a href="/free-nodes/2026-9-12-clash-node.htm" title="Cheap Clash - 9月12日21.8M/S|免费Clash节点/Shadowrocket节点/SSR节点/V2ray节点/Trojan节点/Singbox节点节点推荐，Clash梯子购买推荐">Cheap Clash - 9月12日21.8M/S|免费Clash节点/Shadowrocket节点/SSR节点/V2ray节点/Trojan节点/Singbox节点节点推荐，Clash梯子购买推荐</a><hr /></li>
-                        <li class="py-2"><a href="/free-nodes/free-clash-subscribe-2026-8-21.htm" title="Cheap Clash - 8月21日22.7M/S|免费V2ray节点/Clash节点/Singbox节点/SSR节点/Shadowrocket节点/Trojan节点节点推荐，Clash梯子购买推荐">Cheap Clash - 8月21日22.7M/S|免费V2ray节点/Clash节点/Singbox节点/SSR节点/Shadowrocket节点/Trojan节点节点推荐，Clash梯子购买推荐</a><hr /></li>
-                        <li class="py-2"><a href="/free-nodes/node-share-links-2026-8-13.htm" title="Cheap Clash - 8月13日21.8M/S|免费Singbox节点/Trojan节点/SSR节点/Shadowrocket节点/Clash节点/V2ray节点节点推荐，Clash梯子购买推荐">Cheap Clash - 8月13日21.8M/S|免费Singbox节点/Trojan节点/SSR节点/Shadowrocket节点/Clash节点/V2ray节点节点推荐，Clash梯子购买推荐</a><hr /></li>
+                        <li class="py-2"><a href="/free-nodes/node-share-links-2026-9-5.htm" title="Cheap Clash - 9月5日18.2M/S|免费Trojan节点/Singbox节点/Shadowrocket节点/Clash节点/V2ray节点/SSR节点节点推荐，Clash梯子购买推荐">Cheap Clash - 9月5日18.2M/S|免费Trojan节点/Singbox节点/Shadowrocket节点/Clash节点/V2ray节点/SSR节点节点推荐，Clash梯子购买推荐</a><hr /></li>
+                        <li class="py-2"><a href="/free-nodes/free-node-subscribe-links-2026-9-13.htm" title="Cheap Clash - 9月13日22.3M/S|免费Trojan节点/Clash节点/SSR节点/Shadowrocket节点/V2ray节点/Singbox节点节点推荐，Clash梯子购买推荐">Cheap Clash - 9月13日22.3M/S|免费Trojan节点/Clash节点/SSR节点/Shadowrocket节点/V2ray节点/Singbox节点节点推荐，Clash梯子购买推荐</a><hr /></li>
                     </ul>
     </div>
 </div>
@@ -384,10 +384,10 @@ Clash可以通过集成方式，将多名用户的网络需求集中到一台服
     <div class="panel-body">
         <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
                         <li class="py-2">
-                <h4><span class="badge" style="float: right;">29</span> <a href="/date/2026-09/" title="2026-09 归档">2026-09</a></h4>
+                <h4><span class="badge" style="float: right;">6</span> <a href="/date/2026-10/" title="2026-10 归档">2026-10</a></h4>
             </li>
                         <li class="py-2">
-                <h4><span class="badge" style="float: right;">26</span> <a href="/date/2026-08/" title="2026-08 归档">2026-08</a></h4>
+                <h4><span class="badge" style="float: right;">29</span> <a href="/date/2026-09/" title="2026-09 归档">2026-09</a></h4>
             </li>
                     </ul>
     </div>
