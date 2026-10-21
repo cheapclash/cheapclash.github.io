@@ -164,39 +164,14 @@ IPLC、IEPL中转，点对点专线连接。高速冲浪，科学上网不二选
         TLS 配置可将流量伪装成正常 HTTPS 请求，隐藏真实数据特征。结合域名伪装、WebSocket 或 QUIC 等传输方式，可有效绕过封锁，提高节点长期可用性和连接稳定性。<hr />    </div>
 </div>
 <div class="panel panel-default">
-    <div class="panel-heading"><h5>Sing-box 的路由规则能否实现分国家代理？</h5></div>
+    <div class="panel-heading"><h5>Mellow 的 TUN 模式与 SOCKS5 代理有什么区别？</h5></div>
     <div class="panel-body">
-        Sing-box 支持 GeoIP 路由规则，通过引入国家数据库可根据 IP 自动判断地理位置。例如可设置 CN 走直连，US/JP 走代理，以此实现分国家策略路由，适合需要访问不同地区内容的用户。<hr />    </div>
+        TUN 模式拦截系统 IP 层流量，实现全局代理；SOCKS5 代理通常只影响支持代理的应用。TUN 更适合全局加速和游戏、视频等应用，保证所有流量通过节点，提高网络稳定性。<hr />    </div>
 </div>
 <div class="panel panel-default">
     <div class="panel-heading"><h5>Surfboard 能否同步 iCloud 配置？</h5></div>
     <div class="panel-body">
         可以。Surfboard 支持 iCloud 同步功能，用户可在不同苹果设备上共享同一配置文件。这样即使更换手机或重装系统，也能自动恢复节点与分流设置。<hr />    </div>
-</div>
-<div class="panel panel-default">
-    <div class="panel-heading"><h5>Nekoray 如何实现节点订阅自动更新？</h5></div>
-    <div class="panel-body">
-        支持订阅 URL 自动更新节点，程序定期下载并替换旧节点。保证节点列表最新，减少手动维护，提高使用效率和便利性，同时保证网络访问稳定性。<hr />    </div>
-</div>
-<div class="panel panel-default">
-    <div class="panel-heading"><h5>Trojan 的证书配置错误会导致什么问题？</h5></div>
-    <div class="panel-body">
-        如果 TLS 证书无效或域名不匹配，Trojan 客户端将无法建立安全连接，导致节点无法使用。需要确保证书有效、域名正确，才能保证正常访问。<hr />    </div>
-</div>
-<div class="panel panel-default">
-    <div class="panel-heading"><h5>VMess 的多路复用在短连接环境下有什么优势？</h5></div>
-    <div class="panel-body">
-        多路复用可将多个短连接共享同一 TCP 或 QUIC 隧道，减少重复握手和延迟。适合高频短连接的应用场景，如即时通讯、游戏或网页频繁请求，提升整体响应速度。<hr />    </div>
-</div>
-<div class="panel panel-default">
-    <div class="panel-heading"><h5>如何备份 Clash 配置文件？</h5></div>
-    <div class="panel-body">
-        Clash 的配置文件通常位于程序目录或配置文件夹中（如 Windows 下的 .config/clash）。用户可直接复制该 YAML 文件以备份，也可将订阅链接保存，便于后续恢复或在其他设备上同步使用。<hr />    </div>
-</div>
-<div class="panel panel-default">
-    <div class="panel-heading"><h5>Mellow 的 TUN 模式与 SOCKS5 代理有什么区别？</h5></div>
-    <div class="panel-body">
-        TUN 模式拦截系统 IP 层流量，实现全局代理；SOCKS5 代理通常只影响支持代理的应用。TUN 更适合全局加速和游戏、视频等应用，保证所有流量通过节点，提高网络稳定性。<hr />    </div>
 </div>
 <div class="panel panel-default">
     <div class="panel-heading"><h5>VMess 节点的 alterId 参数还需要设置吗？</h5></div>
@@ -206,7 +181,32 @@ IPLC、IEPL中转，点对点专线连接。高速冲浪，科学上网不二选
 <div class="panel panel-default">
     <div class="panel-heading"><h5>VLESS + Reality 与 Trojan 在性能上差异大吗？</h5></div>
     <div class="panel-body">
-        两者性能相近。VLESS + Reality 伪装更自然，适合强封锁地区；Trojan 则依托标准 TLS 实现高速连接。选择取决于服务器支持与环境稳定性。    </div>
+        两者性能相近。VLESS + Reality 伪装更自然，适合强封锁地区；Trojan 则依托标准 TLS 实现高速连接。选择取决于服务器支持与环境稳定性。<hr />    </div>
+</div>
+<div class="panel panel-default">
+    <div class="panel-heading"><h5>Sing-box 的路由规则能否实现分国家代理？</h5></div>
+    <div class="panel-body">
+        Sing-box 支持 GeoIP 路由规则，通过引入国家数据库可根据 IP 自动判断地理位置。例如可设置 CN 走直连，US/JP 走代理，以此实现分国家策略路由，适合需要访问不同地区内容的用户。<hr />    </div>
+</div>
+<div class="panel panel-default">
+    <div class="panel-heading"><h5>Nekoray 如何实现节点订阅自动更新？</h5></div>
+    <div class="panel-body">
+        支持订阅 URL 自动更新节点，程序定期下载并替换旧节点。保证节点列表最新，减少手动维护，提高使用效率和便利性，同时保证网络访问稳定性。<hr />    </div>
+</div>
+<div class="panel panel-default">
+    <div class="panel-heading"><h5>如何备份 Clash 配置文件？</h5></div>
+    <div class="panel-body">
+        Clash 的配置文件通常位于程序目录或配置文件夹中（如 Windows 下的 .config/clash）。用户可直接复制该 YAML 文件以备份，也可将订阅链接保存，便于后续恢复或在其他设备上同步使用。<hr />    </div>
+</div>
+<div class="panel panel-default">
+    <div class="panel-heading"><h5>VMess 的多路复用在短连接环境下有什么优势？</h5></div>
+    <div class="panel-body">
+        多路复用可将多个短连接共享同一 TCP 或 QUIC 隧道，减少重复握手和延迟。适合高频短连接的应用场景，如即时通讯、游戏或网页频繁请求，提升整体响应速度。<hr />    </div>
+</div>
+<div class="panel panel-default">
+    <div class="panel-heading"><h5>Trojan 的证书配置错误会导致什么问题？</h5></div>
+    <div class="panel-body">
+        如果 TLS 证书无效或域名不匹配，Trojan 客户端将无法建立安全连接，导致节点无法使用。需要确保证书有效、域名正确，才能保证正常访问。    </div>
 </div>
 <div class="panel panel-default mt-5">
     <div class="panel-heading">
@@ -254,16 +254,16 @@ IPLC、IEPL中转，点对点专线连接。高速冲浪，科学上网不二选
     </div>
     <div class="panel-body">
         <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
-                        <li class="py-2"><a href="/free-nodes/shadowrocket-node-2026-10-1.htm" title="Cheap Clash - 10月1日19.5M/S|免费Trojan节点/V2ray节点/Clash节点/Shadowrocket节点/SSR节点/Singbox节点节点推荐，Clash梯子购买推荐">Cheap Clash - 10月1日19.5M/S|免费Trojan节点/V2ray节点/Clash节点/Shadowrocket节点/SSR节点/Singbox节点节点推荐，Clash梯子购买推荐</a><hr /></li>
-                        <li class="py-2"><a href="/free-nodes/node-share-links-2026-9-5.htm" title="Cheap Clash - 9月5日18.2M/S|免费Trojan节点/Singbox节点/Shadowrocket节点/Clash节点/V2ray节点/SSR节点节点推荐，Clash梯子购买推荐">Cheap Clash - 9月5日18.2M/S|免费Trojan节点/Singbox节点/Shadowrocket节点/Clash节点/V2ray节点/SSR节点节点推荐，Clash梯子购买推荐</a><hr /></li>
-                        <li class="py-2"><a href="/free-nodes/2026-9-22-free-clash.htm" title="Cheap Clash - 9月22日21.8M/S|免费Trojan节点/Shadowrocket节点/Clash节点/Singbox节点/V2ray节点/SSR节点节点推荐，Clash梯子购买推荐">Cheap Clash - 9月22日21.8M/S|免费Trojan节点/Shadowrocket节点/Clash节点/Singbox节点/V2ray节点/SSR节点节点推荐，Clash梯子购买推荐</a><hr /></li>
-                        <li class="py-2"><a href="/free-nodes/free-node-subscribe-links-2026-9-9.htm" title="Cheap Clash - 9月9日22.9M/S|免费SSR节点/Trojan节点/Singbox节点/Clash节点/V2ray节点/Shadowrocket节点节点推荐，Clash梯子购买推荐">Cheap Clash - 9月9日22.9M/S|免费SSR节点/Trojan节点/Singbox节点/Clash节点/V2ray节点/Shadowrocket节点节点推荐，Clash梯子购买推荐</a><hr /></li>
-                        <li class="py-2"><a href="/free-nodes/2026-9-18-clash-v2ray-ss-ssr.htm" title="Cheap Clash - 9月18日20.6M/S|免费Trojan节点/V2ray节点/SSR节点/Shadowrocket节点/Clash节点/Singbox节点节点推荐，Clash梯子购买推荐">Cheap Clash - 9月18日20.6M/S|免费Trojan节点/V2ray节点/SSR节点/Shadowrocket节点/Clash节点/Singbox节点节点推荐，Clash梯子购买推荐</a><hr /></li>
-                        <li class="py-2"><a href="/free-nodes/2026-9-12-clash-node.htm" title="Cheap Clash - 9月12日21.8M/S|免费Clash节点/Shadowrocket节点/SSR节点/V2ray节点/Trojan节点/Singbox节点节点推荐，Clash梯子购买推荐">Cheap Clash - 9月12日21.8M/S|免费Clash节点/Shadowrocket节点/SSR节点/V2ray节点/Trojan节点/Singbox节点节点推荐，Clash梯子购买推荐</a><hr /></li>
-                        <li class="py-2"><a href="/free-nodes/free-subscribe-node-2026-9-23.htm" title="Cheap Clash - 9月23日18.7M/S|免费Trojan节点/Shadowrocket节点/SSR节点/V2ray节点/Singbox节点/Clash节点节点推荐，Clash梯子购买推荐">Cheap Clash - 9月23日18.7M/S|免费Trojan节点/Shadowrocket节点/SSR节点/V2ray节点/Singbox节点/Clash节点节点推荐，Clash梯子购买推荐</a><hr /></li>
-                        <li class="py-2"><a href="/free-nodes/2026-10-6-clash-node.htm" title="Cheap Clash - 10月6日19.2M/S|免费Singbox节点/Shadowrocket节点/V2ray节点/SSR节点/Trojan节点/Clash节点节点推荐，Clash梯子购买推荐">Cheap Clash - 10月6日19.2M/S|免费Singbox节点/Shadowrocket节点/V2ray节点/SSR节点/Trojan节点/Clash节点节点推荐，Clash梯子购买推荐</a><hr /></li>
-                        <li class="py-2"><a href="/free-nodes/free-clash-subscribe-2026-9-7.htm" title="Cheap Clash - 9月7日22.6M/S|免费Trojan节点/Singbox节点/Clash节点/SSR节点/Shadowrocket节点/V2ray节点节点推荐，Clash梯子购买推荐">Cheap Clash - 9月7日22.6M/S|免费Trojan节点/Singbox节点/Clash节点/SSR节点/Shadowrocket节点/V2ray节点节点推荐，Clash梯子购买推荐</a><hr /></li>
-                        <li class="py-2"><a href="/free-nodes/2026-10-2-clash-v2ray-ss-ssr.htm" title="Cheap Clash - 10月2日22.5M/S|免费V2ray节点/Shadowrocket节点/Trojan节点/SSR节点/Clash节点/Singbox节点节点推荐，Clash梯子购买推荐">Cheap Clash - 10月2日22.5M/S|免费V2ray节点/Shadowrocket节点/Trojan节点/SSR节点/Clash节点/Singbox节点节点推荐，Clash梯子购买推荐</a><hr /></li>
+                        <li class="py-2"><a href="/free-nodes/2026-9-26-free-clash.htm" title="Cheap Clash - 9月26日19.5M/S|免费V2ray节点/SSR节点/Singbox节点/Shadowrocket节点/Clash节点/Trojan节点节点推荐，Clash梯子购买推荐">Cheap Clash - 9月26日19.5M/S|免费V2ray节点/SSR节点/Singbox节点/Shadowrocket节点/Clash节点/Trojan节点节点推荐，Clash梯子购买推荐</a><hr /></li>
+                        <li class="py-2"><a href="/free-nodes/2026-10-4-node-share.htm" title="Cheap Clash - 10月4日18.3M/S|免费Shadowrocket节点/V2ray节点/Singbox节点/SSR节点/Trojan节点/Clash节点节点推荐，Clash梯子购买推荐">Cheap Clash - 10月4日18.3M/S|免费Shadowrocket节点/V2ray节点/Singbox节点/SSR节点/Trojan节点/Clash节点节点推荐，Clash梯子购买推荐</a><hr /></li>
+                        <li class="py-2"><a href="/free-nodes/node-share-links-2026-9-27.htm" title="Cheap Clash - 9月27日20.1M/S|免费SSR节点/Shadowrocket节点/Trojan节点/V2ray节点/Singbox节点/Clash节点节点推荐，Clash梯子购买推荐">Cheap Clash - 9月27日20.1M/S|免费SSR节点/Shadowrocket节点/Trojan节点/V2ray节点/Singbox节点/Clash节点节点推荐，Clash梯子购买推荐</a><hr /></li>
+                        <li class="py-2"><a href="/free-nodes/2026-10-10-clash-v2ray-ss-ssr.htm" title="Cheap Clash - 10月10日19.8M/S|免费Clash节点/Shadowrocket节点/Trojan节点/Singbox节点/SSR节点/V2ray节点节点推荐，Clash梯子购买推荐">Cheap Clash - 10月10日19.8M/S|免费Clash节点/Shadowrocket节点/Trojan节点/Singbox节点/SSR节点/V2ray节点节点推荐，Clash梯子购买推荐</a><hr /></li>
+                        <li class="py-2"><a href="/free-nodes/shadowrocket-node-2026-9-19.htm" title="Cheap Clash - 9月19日20.6M/S|免费V2ray节点/Trojan节点/Clash节点/Singbox节点/Shadowrocket节点/SSR节点节点推荐，Clash梯子购买推荐">Cheap Clash - 9月19日20.6M/S|免费V2ray节点/Trojan节点/Clash节点/Singbox节点/Shadowrocket节点/SSR节点节点推荐，Clash梯子购买推荐</a><hr /></li>
+                        <li class="py-2"><a href="/free-nodes/2026-9-28-clash-node.htm" title="Cheap Clash - 9月28日19.9M/S|免费V2ray节点/Clash节点/Singbox节点/Trojan节点/Shadowrocket节点/SSR节点节点推荐，Clash梯子购买推荐">Cheap Clash - 9月28日19.9M/S|免费V2ray节点/Clash节点/Singbox节点/Trojan节点/Shadowrocket节点/SSR节点节点推荐，Clash梯子购买推荐</a><hr /></li>
+                        <li class="py-2"><a href="/free-nodes/2026-10-16-free-clash.htm" title="Cheap Clash - 10月16日22.7M/S|免费V2ray节点/Trojan节点/Shadowrocket节点/Singbox节点/Clash节点/SSR节点节点推荐，Clash梯子购买推荐">Cheap Clash - 10月16日22.7M/S|免费V2ray节点/Trojan节点/Shadowrocket节点/Singbox节点/Clash节点/SSR节点节点推荐，Clash梯子购买推荐</a><hr /></li>
+                        <li class="py-2"><a href="/free-nodes/free-node-subscribe-links-2026-9-11.htm" title="Cheap Clash - 9月11日20M/S|免费Singbox节点/Clash节点/SSR节点/V2ray节点/Shadowrocket节点/Trojan节点节点推荐，Clash梯子购买推荐">Cheap Clash - 9月11日20M/S|免费Singbox节点/Clash节点/SSR节点/V2ray节点/Shadowrocket节点/Trojan节点节点推荐，Clash梯子购买推荐</a><hr /></li>
+                        <li class="py-2"><a href="/free-nodes/2026-9-14-clash-node.htm" title="Cheap Clash - 9月14日19.8M/S|免费SSR节点/Singbox节点/V2ray节点/Shadowrocket节点/Trojan节点/Clash节点节点推荐，Clash梯子购买推荐">Cheap Clash - 9月14日19.8M/S|免费SSR节点/Singbox节点/V2ray节点/Shadowrocket节点/Trojan节点/Clash节点节点推荐，Clash梯子购买推荐</a><hr /></li>
+                        <li class="py-2"><a href="/free-nodes/free-node-subscribe-links-2026-9-13.htm" title="Cheap Clash - 9月13日22.3M/S|免费Trojan节点/Clash节点/SSR节点/Shadowrocket节点/V2ray节点/Singbox节点节点推荐，Clash梯子购买推荐">Cheap Clash - 9月13日22.3M/S|免费Trojan节点/Clash节点/SSR节点/Shadowrocket节点/V2ray节点/Singbox节点节点推荐，Clash梯子购买推荐</a><hr /></li>
                     </ul>
     </div>
 </div>
@@ -275,7 +275,7 @@ IPLC、IEPL中转，点对点专线连接。高速冲浪，科学上网不二选
     <div class="panel-body">
         <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
                         <li class="py-2">
-                <h4><span class="badge" style="float: right;">13</span> <a href="/date/2026-10/" title="2026-10 归档">2026-10</a></h4>
+                <h4><span class="badge" style="float: right;">20</span> <a href="/date/2026-10/" title="2026-10 归档">2026-10</a></h4>
             </li>
                         <li class="py-2">
                 <h4><span class="badge" style="float: right;">29</span> <a href="/date/2026-09/" title="2026-09 归档">2026-09</a></h4>
